@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'expenses#index'
-  
+    
+  devise_for :users
   resources :expenses, only: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.
