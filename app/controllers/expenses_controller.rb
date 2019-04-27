@@ -1,4 +1,5 @@
 class ExpensesController < ApplicationController
+  before_action :authenticate_user!
   def index
     @expenses = Expense.order("date DESC")
     @expenses= @expenses.where(category_id: params[:category_id]) unless !params[:category_id].present?   
